@@ -1,7 +1,16 @@
 import React, { FC } from "react";
 
+import Editor from "@monaco-editor/react";
+
 const App: FC<{}> = () => {
-  return <div>APP</div>;
+  return (
+    <Editor
+      height={"100vh"}
+      defaultLanguage="d2"
+      defaultValue="// some comment"
+      theme={"vs-dark"}
+    />
+  );
 };
 
 export default App;
