@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
 import Editor from "@monaco-editor/react";
-// dummy line
+
 const App: FC<{}> = () => {
   return (
     <Editor
