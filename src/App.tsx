@@ -19,7 +19,7 @@ const App: FC<{}> = () => {
 
   const editorOnChange = _.debounce((code: string | undefined) => {
     submitCode(code);
-  }, 300);
+  }, 2000);
 
   return (
     <div className="h-screen w-screen flex flex-1 flex-col">
@@ -36,6 +36,12 @@ const App: FC<{}> = () => {
             fontFamily: "Fira Code",
             fontLigatures: true,
             wordWrap: "on",
+            minimap: {
+              enabled: false,
+            },
+            contextmenu: false,
+            formatOnType: true,
+            tabSize: 2,
           }}
           onChange={editorOnChange}
         />
