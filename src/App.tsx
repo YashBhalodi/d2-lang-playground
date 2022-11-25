@@ -28,7 +28,7 @@ const App: FC<{}> = () => {
         <Editor
           className="flex-1 text-xl"
           defaultLanguage="d2"
-          defaultValue="// refer to https://www.d2lang.com/tour/cheat-sheet for cheatsheet"
+          defaultValue="# refer to https://www.d2lang.com/tour/cheat-sheet for cheatsheet"
           theme={"vs-dark"}
           options={{
             fontSize: 16,
