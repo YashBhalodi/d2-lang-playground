@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import Editor from "@monaco-editor/react";
 import _ from "lodash";
+import { SplitPane } from "react-multi-split-pane";
 
 const App: FC<{}> = () => {
   const [iframeContent, setIframeContent] = useState<string>("<div></div>");
@@ -22,7 +23,7 @@ const App: FC<{}> = () => {
 
   return (
     <div className="h-screen w-screen flex flex-1 flex-col">
-      <div className="grid grid-cols-2 h-screen">
+      <SplitPane split="vertical" minSize={50}>
         <iframe srcDoc={iframeContent} className={"w-full h-full"}></iframe>
 
         <Editor
@@ -38,7 +39,7 @@ const App: FC<{}> = () => {
           }}
           onChange={editorOnChange}
         />
-      </div>
+      </SplitPane>
     </div>
   );
 };
