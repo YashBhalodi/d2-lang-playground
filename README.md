@@ -9,7 +9,6 @@
 - [x] Split pane UI
 - [x] Improve loading UI experience
 - [ ] Allow selecting theme for D2
-- [ ] Allow loading previously written examples
+- [ ] Allow loading examples
 - [ ] Add instruction on how to use
-- [ ] Add footer for credits
 - [ ] Write full readme

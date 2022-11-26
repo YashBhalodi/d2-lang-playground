@@ -69,6 +69,20 @@ const App: FC<{}> = () => {
           }
         />
       </SplitPane>
+      <div className="py-2 border-t-2 border-gray-200 w-full bg-gray-100 z-10 shadow-lg absolute bottom-0 flex justify-center items-center">
+        Made by
+        <a href="https://github.com/YashBhalodi" className="text-blue-800 mx-1">
+          Yash Bhalodi
+        </a>
+        . See the
+        <a
+          href="https://github.com/YashBhalodi/d2-lang-playground"
+          className="text-blue-800 underline underline-offset-2 mx-1"
+        >
+          source
+        </a>{" "}
+        on Github
+      </div>
     </div>
   );
 };
