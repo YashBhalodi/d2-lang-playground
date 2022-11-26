@@ -64,7 +64,7 @@ const App: FC<{}> = () => {
             },
           }}
           onChange={editorOnChange}
-          loading={<div className="bg-gray-800" />}
+          loading={<div className="bg-gray-800 w-full h-full" />}
         />
       </SplitPane>
     </div>
