@@ -64,7 +64,9 @@ const App: FC<{}> = () => {
             },
           }}
           onChange={editorOnChange}
-          loading={<div className="bg-gray-800 w-full h-full" />}
+          loading={
+            <div className="bg-gradient-to-r from-gray-700 via-zinc-800 to-gray-700 background-animate w-full h-full" />
+          }
         />
       </SplitPane>
     </div>
