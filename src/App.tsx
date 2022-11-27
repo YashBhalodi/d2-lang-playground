@@ -11,15 +11,19 @@ const App: FC<{}> = () => {
 
   const submitCode = async (code: string) => {
     setIsLoading(true);
-    const response = await fetch("http://localhost:8000/getSvg", {
-      method: "POST",
-      body: JSON.stringify({
-        diagramCode: code || "",
-      }),
-    });
-    const htmlCode = await response.text();
-    setIframeContent(htmlCode);
-    currentSvgCode.current = code;
+    try {
+      const response = await fetch("https://d2api.fly.dev/getSvg", {
+        method: "POST",
+        body: JSON.stringify({
+          diagramCode: code || "",
+        }),
+      });
+      const htmlCode = await response.text();
+      setIframeContent(htmlCode);
+      currentSvgCode.current = code;
+    } catch (e) {
+      console.error(e);
+    }
     setIsLoading(false);
   };
 

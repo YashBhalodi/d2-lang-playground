@@ -3,7 +3,7 @@
 - [x] Editor
 - [x] Render output svg
 - [ ] Editor - D2 language specific enhancements
-  - [ ] syntax highlighting
+  - [ ] syntax highlighting (https://ohdarling88.medium.com/4-steps-to-add-custom-language-support-to-monaco-editor-5075eafa156d)
   - [ ] auto suggestions
   - [ ] auto formatter
 - [x] Split pane UI
