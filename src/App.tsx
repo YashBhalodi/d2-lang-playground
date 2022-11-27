@@ -49,37 +49,42 @@ const App: FC<{}> = () => {
       {showLoadingBar ? (
         <div className="bg-gradient-to-r from-gray-700 via-zinc-400 to-gray-700 h-2 w-full z-10 background-animate" />
       ) : null}
-      <SplitPane split="vertical" minSize={50}>
-        <iframe srcDoc={iframeContent} className={"w-full h-full"}></iframe>
+      <div className="flex flex-1 w-full relative">
+        <SplitPane split="vertical" minSize={50}>
+          <div
+            className={"w-full h-full scrollbar overflow-auto"}
+            dangerouslySetInnerHTML={{ __html: iframeContent }}
+          />
 
-        <Editor
-          className="flex-1 text-xl"
-          defaultLanguage="d2"
-          defaultValue="# refer to https://www.d2lang.com/tour/cheat-sheet for cheatsheet"
-          theme={"vs-dark"}
-          value={code}
-          options={{
-            fontSize: 16,
-            fontFamily: "Fira Code",
-            fontLigatures: true,
-            wordWrap: "on",
-            minimap: {
-              enabled: false,
-            },
-            contextmenu: false,
-            formatOnType: true,
-            tabSize: 2,
-            padding: {
-              top: 16,
-            },
-          }}
-          onChange={editorOnChange}
-          loading={
-            <div className="bg-gradient-to-r from-gray-700 via-zinc-800 to-gray-700 background-animate w-full h-full" />
-          }
-        />
-      </SplitPane>
-      <div className="py-2 border-t-2 border-gray-200 w-full bg-gray-100 z-10 shadow-lg absolute bottom-0 flex justify-center items-center">
+          <Editor
+            className="flex-1 text-xl"
+            defaultLanguage="d2"
+            defaultValue="# refer to https://www.d2lang.com/tour/cheat-sheet for cheatsheet"
+            theme={"vs-dark"}
+            value={code}
+            options={{
+              fontSize: 16,
+              fontFamily: "Fira Code",
+              fontLigatures: true,
+              wordWrap: "on",
+              minimap: {
+                enabled: false,
+              },
+              contextmenu: false,
+              formatOnType: true,
+              tabSize: 2,
+              padding: {
+                top: 16,
+              },
+            }}
+            onChange={editorOnChange}
+            loading={
+              <div className="bg-gradient-to-r from-gray-700 via-zinc-800 to-gray-700 background-animate w-full h-full" />
+            }
+          />
+        </SplitPane>
+      </div>
+      <div className="py-2 border-t-2 border-gray-200 w-full bg-gray-100 shadow-lg bottom-0 flex justify-center items-center">
         Made by
         <a href="https://github.com/YashBhalodi" className="text-blue-800 mx-1">
           Yash Bhalodi
