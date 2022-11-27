@@ -8,6 +8,7 @@ const App: FC<{}> = () => {
   const [code, setCode] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const currentSvgCode = useRef<string>("");
+  const hasCompilerError = useRef<boolean>(false);
 
   const submitCode = async (code: string) => {
     setIsLoading(true);
@@ -21,8 +22,9 @@ const App: FC<{}> = () => {
       const htmlCode = await response.text();
       setIframeContent(htmlCode);
       currentSvgCode.current = code;
+      hasCompilerError.current = false;
     } catch (e) {
-      console.error(e);
+      hasCompilerError.current = true;
     }
     setIsLoading(false);
   };
@@ -38,9 +40,13 @@ const App: FC<{}> = () => {
     debouncedCodeUpdate(code);
   };
 
+  const showLoadingBar =
+    (isLoading || currentSvgCode.current !== code) &&
+    hasCompilerError.current === false;
+
   return (
     <div className="h-screen w-screen flex flex-1 flex-col">
-      {isLoading || currentSvgCode.current !== code ? (
+      {showLoadingBar ? (
         <div className="bg-gradient-to-r from-gray-700 via-zinc-400 to-gray-700 h-2 w-full z-10 background-animate" />
       ) : null}
       <SplitPane split="vertical" minSize={50}>
