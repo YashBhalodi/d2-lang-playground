@@ -86,13 +86,18 @@ const App: FC<{}> = () => {
       </div>
       <div className="py-2 border-t-2 border-gray-200 w-full bg-gray-100 shadow-lg bottom-0 flex justify-center items-center">
         Made by
-        <a href="https://github.com/YashBhalodi" className="text-blue-800 mx-1">
+        <a
+          href="https://github.com/YashBhalodi"
+          className="text-blue-800 mx-1"
+          target={"_blank"}
+        >
           Yash Bhalodi
         </a>
         . See the
         <a
           href="https://github.com/YashBhalodi/d2-lang-playground"
           className="text-blue-800 underline underline-offset-2 mx-1"
+          target={"_blank"}
         >
           source
         </a>{" "}
